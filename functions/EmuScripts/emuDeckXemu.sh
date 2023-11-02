@@ -21,6 +21,7 @@ Xemu_init() {
 	Xemu_migrate
 	Xemu_setupStorage
 	Xemu_setEmulationFolder
+	Xemu_setCustomizations
 }
 
 #update
@@ -115,7 +116,7 @@ Xemu_wideScreenOn(){
 }
 
 #WideScreenOff
-Xemu_WideScreenOff(){
+Xemu_wideScreenOff(){
 	configFile="$HOME/.var/app/app.xemu.xemu/data/xemu/xemu/xemu.toml"
     fit='fit = '
     fitSetting="${fit}'scale_4_3'"
@@ -137,3 +138,18 @@ Xemu_finalize(){
 	echo "NYI"
 }
 
+Xemu_IsInstalled(){
+	isFpInstalled "$Xemu_emuPath"
+}
+
+Xemu_resetConfig(){
+	Xemu_init &>/dev/null && echo "true" || echo "false"
+}
+
+Xemu_setCustomizations(){
+	if [ "$arClassic3D" == 169 ]; then	
+	  Xemu_wideScreenOn
+	else
+	  Xemu_wideScreenOff
+	fi
+}
