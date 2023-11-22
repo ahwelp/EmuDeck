@@ -1,19 +1,33 @@
 {
   "parserType": "Glob",
-  "configTitle": "Sony PlayStation Portable - PPSSPP",
-  "steamCategory": "${Sony PlayStation Portable}",
+  "configTitle": "Arcade - Naomi - Flycast",
+  "steamCategory": "${Arcade - Naomi}",
   "executableModifier": "\"${exePath}\"",
-  "romDirectory": "${romsdirglobal}/psp",
+  "romDirectory": "${romsdirglobal}/naomi",
   "steamDirectory": "${steamdirglobal}",
   "startInDirectory": "",
   "titleModifier": "${fuzzyTitle}",
-  "executableArgs": "-f -g \"${filePath}\"",
+  "executableArgs": "\"'${filePath}'\"",
   "onlineImageQueries": "${${fuzzyTitle}}",
   "imagePool": "${fuzzyTitle}",
   "imageProviders": ["SteamGridDB"],
   "disabled": true,
   "userAccounts": {
     "specifiedAccounts": ""
+  },
+  "parserInputs": {
+    "glob": "**/${title}@(.7z|.7Z|.cdi|.CDI|.chd|.CHD|.cue|.CUE|.gdi|.GDI|.m3u|.M3U)"
+  },
+  "titleFromVariable": {
+    "limitToGroups": "",
+    "caseInsensitiveVariables": false,
+    "skipFileIfVariableWasNotFound": false,
+    "tryToMatchTitle": false
+  },
+  "fuzzyMatch": {
+    "replaceDiacritics": true,
+    "removeCharacters": true,
+    "removeBrackets": true
   },
   "controllers": {
     "switch_pro": {
@@ -22,8 +36,8 @@
       "profileType": "template"
     },
     "neptune": {
-      "title": "EmuDeck - Steam Deck",
-      "mappingId": "emudeck_controller_steamdeck.vdf",
+      "title": "EmuDeck - Steam Deck Proton",
+      "mappingId": "emudeck_controller_steamdeck_proton.vdf",
       "profileType": "template"
     },
     "ps4": {
@@ -49,26 +63,12 @@
     "switch_joycon_left": null,
     "switch_joycon_right": null
   },
-  "parserInputs": {
-    "glob": "**/${title}@(.7z|.7Z|.elf|.ELF|.cso|.CSO|.iso|.ISO|.pbp|.PBP|.prx|.PRX)"
-  },
-  "titleFromVariable": {
-    "limitToGroups": "",
-    "caseInsensitiveVariables": false,
-    "skipFileIfVariableWasNotFound": false,
-    "tryToMatchTitle": false
-  },
-  "fuzzyMatch": {
-    "replaceDiacritics": true,
-    "removeCharacters": true,
-    "removeBrackets": true
-  },
   "executable": {
-    "path": "/run/media/mmcblk0p1/Emulation/tools/launchers/ppsspp.sh",
+    "path": "/run/media/mmcblk0p1/Emulation/tools/launchers/flycast.sh",
     "shortcutPassthrough": false,
-    "appendArgsToExecutable": true
+    "appendArgsToExecutable": false
   },
-  "parserId": "164785656634747068",
+  "parserId": "164285091855061150",
   "version": 15,
   "imageProviderAPIs": {
     "SteamGridDB": {
