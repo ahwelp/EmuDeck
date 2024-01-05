@@ -324,6 +324,9 @@ PCSX2QT_setCustomizations(){
 	echo "NYI"
 }
 
+PCSX2QT_getVersion(){
+	$PCSX2QT_emuPath -version | grep -oP "^(v\d+\.\d+\.\d+)"
+}
 
 PCSX2QT_setResolution(){
 
